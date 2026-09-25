@@ -1,0 +1,10 @@
+name = "stylo-meter-ai"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[ai]
+binding = "AI"
+
+[vars]
+# Your GitHub Pages origin, e.g. "https://yourname.github.io". "*" allows any site.
+ALLOWED_ORIGIN = "*"
