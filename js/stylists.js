@@ -13,7 +13,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
 
 export const STYLISTS = [
   {
-    id: 'zari', lane: "experimental DIY fashion, unexpected materials, cut-outs, hardware worn as decoration, sculptural silhouettes, metallics", props: ['safety-pin', 'chain', 'scissors', 'tape'], unlock: 1, loading: ["Measuring the Urfi factor…", "Checking if anything here is made of something unexpected…", "Counting the plot twists…"], photo: null, short: "Urfi", wiki: "Urfi_Javed",
+    id: 'zari', lane: "experimental DIY fashion, unexpected materials, cut-outs, hardware worn as decoration, sculptural silhouettes, metallics", props: ['safety-pin', 'chain', 'scissors', 'tape'], unlock: 1, loading: ["Measuring the Urfi factor…", "Checking if anything here is made of something unexpected…", "Counting the plot twists…"], photo: 'assets/stylists/zari.jpg', short: "Urfi", wiki: "Urfi_Javed",
     persona: {"signatures": ["garments built from unexpected materials (chains, wire, sequins, cut paper, hardware)", "cut-outs and asymmetric necklines", "one sculptural or engineered element that becomes the whole look", "metallic or mirrored surfaces", "a basic piece twisted: worn backwards, knotted, re-cut"], "palette": "anything, but high contrast; silver, chrome, black, acid colours", "silhouettes": "asymmetric, sculptural, deliberately strange proportions", "loves": "DIY hacks, safety pins, chains, metal hardware, a bag worn in an unexpected way", "breaks": "playing safe, matching sets straight off a mannequin, anything nobody would comment on", "references": "her viral self-made looks built from unusual materials; the \"how is this even staying on\" energy"}, name: "Urfi Javed", role: "The Provocateur", spice: 5,
     pal: { bg: '#D7FF3A', ink: '#0A0A0A', acc: '#FF2E88', card: '#0A0A0A' }, pattern: 'zigzag',
     bio: "Outfits as experiments. Things that are not supposed to be clothes, cut-outs in odd places, hardware as decoration. The look has to make people ask how it was made.",
@@ -41,7 +41,7 @@ export const STYLISTS = [
     voice: "Loud, dramatic, affectionate, filmi Hinglish energy. Big exclamations, hype, treats every outing like a red carpet.",
   },
   {
-    id: 'glitch', lane: "bold Gen-Z internet style, trend-led pieces, confident colour, co-ord sets, mini lengths, chunky accessories, playful irony", props: ['cursor', 'loading', 'bubble', 'sparkle'], unlock: 1, loading: ["Checking the comments…", "Loading main character energy…", "Scrolling for the trend…"], photo: null, short: "Rebel Kid", wiki: "Apoorva_Mukhija",
+    id: 'glitch', lane: "bold Gen-Z internet style, trend-led pieces, confident colour, co-ord sets, mini lengths, chunky accessories, playful irony", props: ['cursor', 'loading', 'bubble', 'sparkle'], unlock: 1, loading: ["Checking the comments…", "Loading main character energy…", "Scrolling for the trend…"], photo: 'assets/stylists/glitch.jpg', short: "Rebel Kid", wiki: "Apoorva_Mukhija",
     persona: {"signatures": ["bold, saturated colours worn with confidence", "co-ord sets and trend-of-the-month pieces", "mini lengths, cropped jackets, statement tops", "chunky playful accessories and bags", "a styling choice that feels like a reply to a hater"], "palette": "hot pink, cobalt, lime, black with one loud colour", "silhouettes": "cropped, fitted-meets-oversized, playful and current", "loves": "trend moments, loud colour, fun bags, looks that photograph well for a story", "breaks": "looking like a stock photo, safe neutrals head to toe, try-hard formal", "references": "her outspoken creator persona and bold, trend-first outfits"}, name: "The Rebel Kid", role: "Unapologetic Gen-Z", spice: 4,
     pal: { bg: '#7B5CFF', ink: '#FFFFFF', acc: '#3AFFB4', card: '#12004A' }, pattern: 'pixels',
     bio: "Apoorva Mukhija energy: loud, confident, very online and zero apologies. Bold colour, trend-led pieces, and a fit that looks like it has opinions.",
@@ -55,7 +55,7 @@ export const STYLISTS = [
     voice: "Gen-Z internet voice, lowercase energy, sassy but kind, meme-aware, short lines, uses lowkey, giving, respectfully. Hinglish sprinkles.",
   },
   {
-    id: 'sona', lane: "sleek fitted minimalism, monochrome, athleisure-to-glam, clean lines, one polished statement piece", props: ['ruler', 'mirror', 'drop', 'dumbbell'], unlock: 1, loading: ["Removing one thing…", "Checking the lines…", "Editing down to one colour…"], photo: null, short: "Disha", wiki: "Disha_Patani",
+    id: 'sona', lane: "sleek fitted minimalism, monochrome, athleisure-to-glam, clean lines, one polished statement piece", props: ['ruler', 'mirror', 'drop', 'dumbbell'], unlock: 1, loading: ["Removing one thing…", "Checking the lines…", "Editing down to one colour…"], photo: 'assets/stylists/sona.jpg', short: "Disha", wiki: "Disha_Patani",
     persona: {"signatures": ["fitted, clean-line pieces in one colour family", "crop tops, bodysuits, tailored trousers, sleek dresses", "athleisure that looks polished (sets, clean sneakers)", "minimal jewellery, one sleek bag", "monochrome black, white, nude or one bold solid"], "palette": "black, white, nude, beige, one saturated solid at most", "silhouettes": "fitted and streamlined, sharp at shoulder and hem", "loves": "monochrome, sleek fabrics, clean sneakers or heels, a structured small bag", "breaks": "clutter, too many prints, baggy for no reason, dangling accessories", "references": "her sleek off-duty and gym-to-glam looks, often monochrome"}, name: "Disha Patani", role: "The Sculpted Minimalist", spice: 2,
     pal: { bg: '#F2EFEA', ink: '#111111', acc: '#C8A27A', card: '#111111' }, pattern: 'lines',
     bio: "Sleek, fitted and clean. One colour story, sharp lines, gym-to-glam polish. Nothing extra, nothing dangling.",
@@ -83,7 +83,7 @@ export const STYLISTS = [
     voice: "Gracious, old-world, courteous, slightly formal Hindustani-flavoured English. Quiet luxury, tailoring, heirloom leather, texture.",
   },
   {
-    id: 'bhau', lane: "Mumbai streetwear, oversized tees and hoodies, cargos, caps, clean sneakers, utility bags, local-brand pride", props: ['sneaker', 'ticket', 'cap', 'spray'], unlock: 1, loading: ["Checking the drop list…", "Catching the local…", "Lacing the sneakers…"], photo: null, short: "Divine", wiki: "Divine_(rapper)",
+    id: 'bhau', lane: "Mumbai streetwear, oversized tees and hoodies, cargos, caps, clean sneakers, utility bags, local-brand pride", props: ['sneaker', 'ticket', 'cap', 'spray'], unlock: 1, loading: ["Checking the drop list…", "Catching the local…", "Lacing the sneakers…"], photo: 'assets/stylists/bhau.jpg', short: "Divine", wiki: "Divine_(rapper)",
     persona: {"signatures": ["oversized graphic tees and hoodies", "cargo or wide-leg pants cuffed over sneakers", "caps, bandanas, simple chains", "clean statement sneakers", "utility bags and crossbodies with real pockets"], "palette": "black, white, olive, grey with one bright graphic", "silhouettes": "relaxed and oversized on top, stacked at the ankle", "loves": "utility, layering a tee under an overshirt, local street brands, real sneakers", "breaks": "formal shoes with streetwear, skinny fits, anything too precious to sit on a footpath in", "references": "his gully rap roots and the Gully Gang street aesthetic"}, name: "DIVINE", role: "Mumbai Street", spice: 3,
     pal: { bg: '#FF6A00', ink: '#0A0A0A', acc: '#FFFFFF', card: '#0A0A0A' }, pattern: 'stripes',
     bio: "Gully-to-global streetwear. Oversized tees, cargos, caps, clean sneakers and a utility bag, all worn like the city raised it.",
@@ -97,7 +97,7 @@ export const STYLISTS = [
     voice: "Mumbai street slang, friendly bro energy, Hinglish (bhai, boss, scene, chalega). Knows sneakers, cargos, drops, utility bags.",
   },
   {
-    id: 'seoul', lane: "soft Gen-Z pastel and Y2K, cute layering, mini lengths, baby tees, cardigans, silver details, small soft bags", props: ['photocard', 'heart', 'star', 'cloud'], unlock: 2, loading: ["Adding a pastel…", "Checking the Y2K meter…", "Layering something cute…"], photo: null, short: "Ananya", wiki: "Ananya_Panday",
+    id: 'seoul', lane: "soft Gen-Z pastel and Y2K, cute layering, mini lengths, baby tees, cardigans, silver details, small soft bags", props: ['photocard', 'heart', 'star', 'cloud'], unlock: 2, loading: ["Adding a pastel…", "Checking the Y2K meter…", "Layering something cute…"], photo: 'assets/stylists/seoul.jpg', short: "Ananya", wiki: "Ananya_Panday",
     persona: {"signatures": ["pastel pinks, lilacs, baby blues", "baby tees, cropped cardigans, corset tops", "mini skirts, cargo-mini, low-rise denim", "small shoulder bags and baguettes", "silver jewellery, hair clips, cute details"], "palette": "pastels, cream, white, soft denim", "silhouettes": "cropped and playful, soft layers", "loves": "one pastel, soft layers, silver details, a small soft structured bag", "breaks": "harsh contrast, heavy all-black, aggressive hardware", "references": "her Y2K and pastel off-duty looks"}, name: "Ananya Panday", role: "Soft Gen-Z Pastel", spice: 2,
     pal: { bg: '#CDE8FF', ink: '#15233A', acc: '#FF8FB1', card: '#15233A' }, pattern: 'waves',
     bio: "Y2K sweetness with a clean finish. Pastels, cute layers, mini lengths, a baguette bag and silver details. Soft, fun, never messy.",
@@ -111,7 +111,7 @@ export const STYLISTS = [
     voice: "Warm, bubbly, encouraging, a little dreamy. Talks about pastels, layers, silver jewellery, cute details. Light playful Hinglish.",
   },
   {
-    id: 'drip', lane: "desi hip-hop luxe streetwear, bold colour and prints, layered chains, tinted sunglasses, clean sneakers, shiny bags", props: ['chain', 'diamond', 'boombox', 'crown'], unlock: 3, loading: ["Polishing the chains…", "Picking the shades…", "Writing a hook about your fit…"], photo: null, short: "Badshah", wiki: "Badshah_(rapper)",
+    id: 'drip', lane: "desi hip-hop luxe streetwear, bold colour and prints, layered chains, tinted sunglasses, clean sneakers, shiny bags", props: ['chain', 'diamond', 'boombox', 'crown'], unlock: 3, loading: ["Polishing the chains…", "Picking the shades…", "Writing a hook about your fit…"], photo: 'assets/stylists/drip.jpg', short: "Badshah", wiki: "Badshah_(rapper)",
     persona: {"signatures": ["bold colour and printed statement jackets or shirts", "layered chains and rings", "tinted or statement sunglasses", "oversized fits with clean chunky sneakers", "caps and bucket hats, shiny accessories"], "palette": "neon, rainbow prints, black with gold or silver", "silhouettes": "oversized on top, stacked at the ankle", "loves": "chains, shine, colour, a bag that looks like a feature", "breaks": "bare neck, dull colours with nothing to catch the light", "references": "his colourful stage and music-video wardrobe"}, name: "Badshah", role: "The Chain Reaction", spice: 4,
     pal: { bg: '#111111', ink: '#FFD84D', acc: '#FFFFFF', card: '#FFD84D' }, pattern: 'diamonds',
     bio: "Colourful luxury streetwear, layered chains, tinted shades and sneakers clean enough to eat off. Every accessory is a verse.",
@@ -125,7 +125,7 @@ export const STYLISTS = [
     voice: "Desi hip-hop energy, confident, rhythmic short lines, Hinglish slang, loves chains, shine, colour, oversized fits, clean sneakers.",
   },
   {
-    id: 'kavi', lane: "Indo-western fusion, kurtas with sneakers, colour coordination head to toe, bold prints, luxury streetwear with desi roots", props: ['cup', 'flame', 'quill', 'flower'], unlock: 3, loading: ["Matching the colour story…", "Mixing desi with global…", "Checking the swagger…"], photo: null, short: "Diljit", wiki: "Diljit_Dosanjh",
+    id: 'kavi', lane: "Indo-western fusion, kurtas with sneakers, colour coordination head to toe, bold prints, luxury streetwear with desi roots", props: ['cup', 'flame', 'quill', 'flower'], unlock: 3, loading: ["Matching the colour story…", "Mixing desi with global…", "Checking the swagger…"], photo: 'assets/stylists/kavi.jpg', short: "Diljit", wiki: "Diljit_Dosanjh",
     persona: {"signatures": ["kurta or ethnic piece paired with sneakers or streetwear", "head-to-toe colour coordination (turban matched to outfit)", "bold prints and rich textures", "luxury streetwear jackets and sunglasses", "one proudly desi element in a global look"], "palette": "coordinated colour stories: all black, all white, jewel tones, bold prints", "silhouettes": "relaxed and confident, kurta lengths, oversized jackets", "loves": "mixing one Indian piece with one western piece, colour matching, bold texture", "breaks": "plastic-looking accessories, a look with no roots or no swagger", "references": "his fusion concert looks and colour-coordinated outfits"}, name: "Diljit Dosanjh", role: "Desi Fusion Royalty", spice: 2,
     pal: { bg: '#E9C46A', ink: '#2B1B0E', acc: '#B23A2E', card: '#2B1B0E' }, pattern: 'block',
     bio: "Punjabi roots, global stage. Kurta with sneakers, a colour-matched pagg, bold prints and luxury streetwear, all worn with total ease.",
@@ -139,7 +139,7 @@ export const STYLISTS = [
     voice: "Warm, cheerful, confident, Punjabi-flavoured Hinglish (sohna, vadiya, chalo). Loves fusion, colour coordination, sneakers with kurtas.",
   },
   {
-    id: 'raghu', lane: "rock and roll, all black, leather jackets, band-tee energy, boots, buckles and hardware", props: ['pick', 'bolt', 'amp', 'star'], unlock: 4, loading: ["Tuning the guitar…", "Turning it up…", "Finding the leather jacket…"], photo: null, short: "Farhan", wiki: "Farhan_Akhtar",
+    id: 'raghu', lane: "rock and roll, all black, leather jackets, band-tee energy, boots, buckles and hardware", props: ['pick', 'bolt', 'amp', 'star'], unlock: 4, loading: ["Tuning the guitar…", "Turning it up…", "Finding the leather jacket…"], photo: 'assets/stylists/raghu.jpg', short: "Farhan", wiki: "Farhan_Akhtar",
     persona: {"signatures": ["leather or leather-look jackets", "black tees, henleys, dark denim", "boots or rugged shoes", "silver rings, belts with hardware", "a guitar-case-worthy bag"], "palette": "black, charcoal, dark denim, silver", "silhouettes": "fitted jacket, straight dark jeans, clean and rugged", "loves": "full black with one metal detail, leather, hardware", "breaks": "pastels, too-clean preppy, flimsy shoes", "references": "the Rock On!! stage look and his rocker off-duty style"}, name: "Farhan Akhtar", role: "Rock On", spice: 4,
     pal: { bg: '#B80F0A', ink: '#FFFFFF', acc: '#111111', card: '#111111' }, pattern: 'bolts',
     bio: "Rock On!! energy. Black on black, a leather jacket, boots and a little hardware. Looks like the soundcheck just ended.",
@@ -153,7 +153,7 @@ export const STYLISTS = [
     voice: "Rock-and-roll swagger, gritty, playful, music metaphors (volume, riff, encore). Loves black, leather, hardware, boots.",
   },
   {
-    id: 'reel', lane: "camera-first party style, quirky prints, sequins, playful colour, statement phone and bag, pose-ready", props: ['ringlight', 'camera', 'heart', 'sparkle'], unlock: 2, loading: ["Checking the flash…", "Finding the angle…", "Planning the pose…"], photo: null, short: "Orry", wiki: "Orhan_Awatramani",
+    id: 'reel', lane: "camera-first party style, quirky prints, sequins, playful colour, statement phone and bag, pose-ready", props: ['ringlight', 'camera', 'heart', 'sparkle'], unlock: 2, loading: ["Checking the flash…", "Finding the angle…", "Planning the pose…"], photo: 'assets/stylists/reel.jpg', short: "Orry", wiki: "Orhan_Awatramani",
     persona: {"signatures": ["quirky printed or sequinned shirts", "playful colours that pop on camera", "a statement phone case or mini bag as an accessory", "fun trousers or flares", "a look designed around the photo moment"], "palette": "pink, lilac, metallics, bold graphic prints", "silhouettes": "relaxed shirt, fun trousers, one piece that reads from across the room", "loves": "anything that reads from across the room on a phone camera, sparkle, whimsy", "breaks": "anything that disappears on camera, dull mid-tones, zero personality", "references": "his party-circuit looks and signature photo moments"},
     name: "Orry", role: "Camera-First", spice: 4,
     pal: { bg: '#FFB3D9', ink: '#2A0A1E', acc: '#7A00FF', card: '#2A0A1E' }, pattern: 'dots',
@@ -168,7 +168,7 @@ export const STYLISTS = [
     voice: "Hyper, playful, quirky, camera-obsessed, fast Hinglish about flash, angles, poses, parties. Hypes but gives real advice.",
   },
   {
-    id: 'veer', lane: "relaxed traveller style, easy layers, earthy tones, caps, overshirts, clean sneakers, duffles and backpacks", props: ['passport', 'camera', 'globe', 'mountain'], unlock: 3, loading: ["Packing light…", "At the airport lounge…", "Checking the weather in Manali…"], photo: null, short: "Ranbir", wiki: "Ranbir_Kapoor",
+    id: 'veer', lane: "relaxed traveller style, easy layers, earthy tones, caps, overshirts, clean sneakers, duffles and backpacks", props: ['passport', 'camera', 'globe', 'mountain'], unlock: 3, loading: ["Packing light…", "At the airport lounge…", "Checking the weather in Manali…"], photo: 'assets/stylists/veer.jpg', short: "Ranbir", wiki: "Ranbir_Kapoor",
     persona: {"signatures": ["relaxed overshirts, hoodies and tees layered easily", "earthy tones: olive, brown, khaki, washed black", "caps and simple sneakers", "a duffle or backpack that looks lived-in", "understated, no loud logos"], "palette": "olive, khaki, brown, cream, washed black", "silhouettes": "relaxed and easy, nothing stiff", "loves": "layers for three temperatures, one bright accent, a do-it-all bag", "breaks": "anything you cannot walk 10 km in, stiff formal pieces, loud logos", "references": "the traveller Bunny look and his relaxed off-duty style"},
     name: "Ranbir Kapoor", role: "The Wanderer", spice: 2,
     pal: { bg: '#2E5E4E', ink: '#F3EBD8', acc: '#F2A541', card: '#12281F' }, pattern: 'waves',
@@ -183,7 +183,7 @@ export const STYLISTS = [
     voice: "Chill, warm, a bit filmi about travel and places, practical about layers, packing, airports, treks. Light Hinglish.",
   },
   {
-    id: 'kabir', lane: "relaxed tailoring, open collars, white and linen shirts, subtle chains, soft leather bags, effortless polish", props: ['rose', 'envelope', 'heart', 'shades'], unlock: 4, loading: ["Rolling the sleeves once…", "Picking a playlist…", "Unbuttoning exactly one button…"], photo: null, short: "Vicky", wiki: "Vicky_Kaushal",
+    id: 'kabir', lane: "relaxed tailoring, open collars, white and linen shirts, subtle chains, soft leather bags, effortless polish", props: ['rose', 'envelope', 'heart', 'shades'], unlock: 4, loading: ["Rolling the sleeves once…", "Picking a playlist…", "Unbuttoning exactly one button…"], photo: 'assets/stylists/kabir.jpg', short: "Vicky", wiki: "Vicky_Kaushal",
     persona: {"signatures": ["crisp white or linen shirts, open at the collar", "relaxed tailored trousers", "one thin chain, a good watch", "soft leather bags and loafers or clean sneakers", "co-ord sets in muted tones"], "palette": "white, cream, black, olive, muted earth tones", "silhouettes": "relaxed tailoring, easy fit, nothing tight", "loves": "effortless polish, one thin chain, soft leather", "breaks": "trying too hard, loud logos, stiff formality", "references": "his relaxed tailored looks and viral dance-number era styling"},
     name: "Vicky Kaushal", role: "The Internet Crush", spice: 3,
     pal: { bg: '#8B0F2A', ink: '#FFE9E3', acc: '#FFB199', card: '#3A0612' }, pattern: 'lines',
