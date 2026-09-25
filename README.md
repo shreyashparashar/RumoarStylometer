@@ -1,4 +1,4 @@
-# Stylo Meter by RUMOAR · v3
+# Stylo Meter by RUMOAR · v6
 
 **Does this look good on me?** Drop your fit → pick the occasion → pick a celebrity vibe icon (or lock one in on the home page and skip straight to the verdict).
 A vision AI actually looks at the photo, scores it honestly, and gives a verdict on how well the fit suits that celebrity's vibe (never in their name, never quoting them), with three moves, a mission, three RUMOAR picks, and an **AI render of you wearing the piece**.
@@ -8,7 +8,7 @@ Two free pieces:
 | Piece | Where it runs | Cost |
 |---|---|---|
 | The website (`index.html`, `css/`, `js/`, `assets/`) | GitHub Pages | Free |
-| The AI brain (`worker/worker.js`) | Cloudflare Worker: Google Gemini Flash (free API tier) for reading + advice, Workers AI FLUX.2 for renders | Free, no card needed |
+| The AI brain (`worker/worker.js`) | Cloudflare Worker: Gemini → Groq → OpenRouter → Workers AI for reading + advice (each free, used in turn when one runs out), Workers AI FLUX.2 for renders | Free, no card needed |
 
 Nothing is downloaded to the visitor's device. Faces are blurred in the browser **before** anything is sent to the AI, and the Worker stores nothing.
 
@@ -21,6 +21,10 @@ Nothing is downloaded to the visitor's device. Faces are blurred in the browser 
 3. Click **Edit code**, delete everything, paste the whole of `worker/worker.js`, click **Deploy**.
 4. Go to the Worker's **Settings → Bindings → Add → Workers AI**. Variable name: `AI`. Save.
 5. **Get a free Gemini key (this is the big quality upgrade):** go to **aistudio.google.com/apikey**, sign in with any Google account, **Create API key**. Back in the Worker: **Settings → Variables and Secrets → Add → type Secret**, name `GEMINI_API_KEY`, paste the key. Save and deploy.
+   **Add the backup brains (strongly recommended, 5 more minutes).** When Gemini's free limit runs out, these take over automatically:
+   - **Groq** (free, no card): sign up at **console.groq.com**, open **API Keys → Create API Key**, copy it. In the Worker: **Settings → Variables and Secrets → Add → type Secret**, name `GROQ_API_KEY`, paste, save.
+   - **OpenRouter** (free models, about 50 requests a day): sign up at **openrouter.ai**, open **Keys → Create Key**, copy it, and add it the same way as a Secret named `OPENROUTER_API_KEY`.
+   - Deploy. The health check (step 7) now lists which providers are switched on under `"providers"`.
    Without it the Worker still runs, on Llama 4 Scout (the old, weaker brain).
 6. **Settings → Variables and Secrets → Add**: name `ALLOWED_ORIGIN`, value `https://<your-username>.github.io`. Save and deploy.
    (This stops other websites from spending your free allowance.)
@@ -52,7 +56,9 @@ Upload everything in this folder to the **top level** of your repository (you sh
 
 **Why not Gemini for the images too?** Google's image models (Nano Banana 2 / Pro) are paid-only on the API right now, so FLUX.2 on Cloudflare stays the best free option. If you ever get billing on the Gemini key, swapping the render step to `gemini-3.1-flash-image` is the next upgrade.
 
-**Free limits:** Gemini's free tier gives each project a few requests per minute and a daily cap (see your limits in AI Studio). Each verdict is 2 calls. If Gemini says "slow down", the Worker quietly falls back to Workers AI, so a demo never dies. Note: on Google's free tier, prompts may be used to improve Google's products, which is one more reason the face is blurred before anything leaves the phone. Cloudflare's image allowance is 10,000 neurons a day, resetting 05:30 IST.
+**Free limits and fallbacks:** each verdict is 2 calls. The Worker tries **Gemini → Groq (Qwen 3.8 27B) → OpenRouter (free Qwen 3.8 / Gemma 4) → Workers AI**, moving on whenever one is rate-limited, out of its daily allowance or down, so one provider running out doesn't stop the demo. The verdict shows which model answered. Workers AI comes last on purpose: its 10,000 daily neurons are kept for the FLUX renders, which have no free alternative. Change the order with a `BRAIN_ORDER` variable, e.g. `groq,gemini,openrouter,cloudflare`, and the models with `GROQ_MODELS` / `OPENROUTER_MODELS`.
+
+**When renders run out:** the Worker tries FLUX.2 klein 9B, then the ~13× cheaper klein 4B. If both are out, the site says so plainly ("renders come back after 05:30 IST") while scores and advice keep working through the other providers. Note: on Google's free tier, prompts may be used to improve Google's products, which is one more reason the face is blurred before anything leaves the phone. Cloudflare's image allowance is 10,000 neurons a day, resetting 05:30 IST.
 
 **Change models** without touching code: add a `GEMINI_MODELS` variable, e.g. `gemini-3.8-flash,gemini-3.6-flash`. Pick models marked "Free of charge" on ai.google.dev/gemini-api/docs/pricing.
 
@@ -129,7 +135,7 @@ js/faceblur.js        On-device face blur
 js/catalog.js         RUMOAR products, occasions, vibes, samples
 js/share.js           Share card
 js/fx.js              Motion helpers
-worker/worker.js      The AI server (Gemini brain + FLUX.2 renders)
+worker/worker.js      The AI server (Gemini/Groq/OpenRouter/Workers AI brain + FLUX.2 renders)
 worker/wrangler.toml  For command-line deploys
 worker/test-worker.mjs  Offline test: node worker/test-worker.mjs
 wireframes.html       Flow and early wireframes
